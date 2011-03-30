@@ -4,12 +4,12 @@ Gem::Specification.new do |s|
   s.authors           = ['Philip Arndt']
   s.homepage          = 'http://philiparndt.name'
   s.email             = 'parndt@gmail.com'
-  s.version           = '1.0.0'
+  s.version           = '1.0.1'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
-  s.date              = '2011-03-29'
+  s.date              = '2011-03-30'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
-  s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*']
+  s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', '*.md']
 
   s.add_dependency 'refinerycms-generators', '~> 1.0.1'
 end
