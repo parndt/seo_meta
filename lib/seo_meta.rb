@@ -40,6 +40,7 @@ def is_seo_meta(options = {})
   fields = ::SeoMeta.attributes.keys.reject{|field|
     self.column_names.map(&:to_sym).include?(field)
   }.map{|a| [a, :"#{a}="]}.flatten
+  fields << {:to => :seo_meta}
 
-  delegate *fields, :to => :seo_meta
+  delegate *fields
 end
