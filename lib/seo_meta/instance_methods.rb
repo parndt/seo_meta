@@ -8,7 +8,7 @@ module SeoMeta
           def seo_meta
             find_seo_meta_tags || build_seo_meta_tags
           end
-          
+
           def attributes
             super.merge(seo_meta_attributes)
           end
@@ -17,9 +17,9 @@ module SeoMeta
             attributes.update(seo_meta_attributes)
             super
           end
-          
+
           def update_attributes(attributes, *args)
-            attributes.update(seo_meta_attributes) if ::SeoMetum.table_exists?
+            attributes.update(seo_meta_attributes)
             super
           end
         end
@@ -34,23 +34,17 @@ module SeoMeta
 
   protected
     def build_seo_meta_tags
-      if ::SeoMetum.table_exists?
-        @seo_meta ||= ::SeoMetum.new :seo_meta_type => self.class.name
-      end
+      @seo_meta ||= ::SeoMetum.new :seo_meta_type => self.class.name
     end
 
     def find_seo_meta_tags
-      if self.persisted? && ::SeoMetum.table_exists?
-        @seo_meta ||= ::SeoMetum.where(:seo_meta_type => self.class.name,
+      @seo_meta ||= ::SeoMetum.where(:seo_meta_type => self.class.name,
                                      :seo_meta_id => self.id).first
-      end
     end
 
     def save_meta_tags
-      if ::SeoMetum.table_exists?
-        seo_meta.seo_meta_id ||= self.id
-        seo_meta.save
-      end
+      seo_meta.seo_meta_id ||= self.id
+      seo_meta.save
     end
   end
 end
