@@ -5,9 +5,10 @@ module SeoMeta
       def included(base)
         # This has to be introduced using module_eval because it overrides something.
         base.module_eval do
-          def seo_meta
-            find_seo_meta_tags || build_seo_meta_tags
+          def seo_meta_with_build
+            seo_meta_without_build || build_seo_meta_tags
           end
+          alias_method_chain :seo_meta, :build
 
           def attributes
             super.merge(seo_meta_attributes)
@@ -35,11 +36,6 @@ module SeoMeta
   protected
     def build_seo_meta_tags
       @seo_meta ||= ::SeoMetum.new :seo_meta_type => self.class.name
-    end
-
-    def find_seo_meta_tags
-      @seo_meta ||= ::SeoMetum.where(:seo_meta_type => self.class.name,
-                                     :seo_meta_id => self.id).first
     end
 
     def save_meta_tags
