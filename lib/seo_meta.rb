@@ -35,7 +35,7 @@ def is_seo_meta(options = {})
     extend ::SeoMeta::ClassMethods
 
     # Ensure seo_meta is saved when the model is saved.
-    after_save :save_meta_tags
+    after_save :save_meta_tags!
 
     # Delegate both the accessor and setters for the fields to :seo_meta
     fields = ::SeoMeta.attributes.keys.reject{|field|
