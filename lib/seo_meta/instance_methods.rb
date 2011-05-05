@@ -9,17 +9,13 @@ module SeoMeta
             find_seo_meta_tags || build_seo_meta_tags
           end
 
+          # Allow attributes supplied to override the current seo_meta_attributes.
           def attributes
-            super.merge(seo_meta_attributes)
+            seo_meta_attributes.merge(super)
           end
 
           def attributes=(attributes, *args)
-            attributes.update(seo_meta_attributes)
-            super
-          end
-
-          def update_attributes(attributes, *args)
-            attributes.update(seo_meta_attributes)
+            seo_meta_attributes.merge(attributes)
             super
           end
         end

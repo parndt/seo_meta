@@ -34,7 +34,9 @@ def is_seo_meta(options = {})
     self.send :include, ::SeoMeta::InstanceMethods
     extend ::SeoMeta::ClassMethods
 
-    # Ensure seo_meta is saved when the model is saved.
+    # Ensure seo_meta is build before the model is saved.
+    # And ensure that seo_meta is saved after the model is saved.
+    before_save :build_seo_meta_tags
     after_save :save_meta_tags!
 
     # Delegate both the accessor and setters for the fields to :seo_meta
