@@ -10,14 +10,19 @@ module SeoMeta
           end
 
           # Allow attributes supplied to override the current seo_meta_attributes.
-          def attributes
-            seo_meta_attributes.merge(super)
+          def attributes_with_seo_meta
+            seo_meta_attributes.merge(attributes_without_seo_meta)
           end
 
-          def attributes=(attributes, *args)
+          alias_method_chain :attributes, :seo_meta
+
+          def attributes_equals_with_seo_meta(attributes, *args)
             seo_meta_attributes.merge(attributes)
-            super
+            attributes_equals_without_seo_meta
           end
+
+          alias_method :attributes_equals, :attributes=
+          alias_method_chain :attributes_equals, :seo_meta
         end
       end
     end
