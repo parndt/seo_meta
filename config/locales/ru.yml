@@ -1,0 +1,10 @@
+ru:
+  seo_meta:
+    form:
+      seo: Поисковая оптимизация
+      seo_override_title: Заголовок браузера
+      seo_override_title_help: "Введите заголовок из 5&ndash;10 слов, которые описывают текст на этой странице."
+      meta_keywords_title: Ключевые слова
+      meta_keywords_help: "Введите 5&ndash;10 ключевых слов, которые относятся к этой странице, разделяя запятой."
+      meta_description_title: Описание
+      meta_description_help: "Введите два-три коротких предложения, описывающих страницу."
