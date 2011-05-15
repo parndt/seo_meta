@@ -93,6 +93,14 @@ afterward, for example with `Page`:
 Now, run:
 
     rake db:migrate
+    
+## Form Partial
+
+You can use the included partial if you want a ready made form for the new SEO fields. Note that the `:form` local variable is required and should be a form builder object from a `form_for` block, for example:
+
+    <%= form_for @page do |f| -%>
+      <%= render :partial => '/seo_meta/form', :locals => { :form => f } %>
+    <% end %>
 
 ## Anything else?
 
