@@ -1,0 +1,10 @@
+zh-TW:
+  seo_meta:
+    form:
+      seo: 搜索引擎最佳化
+      seo_override_title: 瀏覽器標題
+      seo_override_title_help: 輸入 5 到 10 個字來總結這個頁面的內容.
+      meta_keywords_title: Meta 關鍵字
+      meta_keywords_help: 輸入 5 到 10 個跟這個頁面有關的關鍵字. 用逗號分開每個關鍵字.
+      meta_description_title: Meta 說明
+      meta_description_help: 簡潔地輸入兩三句話來介紹這個頁面.

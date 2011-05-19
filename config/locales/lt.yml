@@ -1,0 +1,10 @@
+lt:
+  seo_meta:
+    form:
+      seo: Paieškos variklių optimizacija
+      seo_override_title: Naršyklės antraštė
+      seo_override_title_help: "Įveskite 5-10 žodžių santrauką, kuri nusako šio puslapio turinį."
+      meta_keywords_title: Meta raktažodžiai
+      meta_keywords_help: "Įveskite 5-10 raktinių žodžių, kurie susiję su šiuo puslapiu. Atskirkite raktinius žodžius kableliais."
+      meta_description_title: Meta aprašymas
+      meta_description_help: Įveskite rišlius du ar tris sakinius nusakančius apie ką šis puslapis.

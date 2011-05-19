@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date              = '2011-05-19'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
-  s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', '*.md']
+  s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
 
   s.add_dependency 'refinerycms-generators', '~> 1.0.1'
 end
