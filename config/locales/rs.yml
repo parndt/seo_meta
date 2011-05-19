@@ -1,0 +1,10 @@
+rs:
+  seo_meta:
+    form:
+      seo: Optimizacija za pretraživače(SEO)
+      seo_override_title: Naslov u brauzeru
+      seo_override_title_help: Unesi naslov koji objašnjava sadržaj strane.
+      meta_keywords_title: Ključne reči
+      meta_keywords_help: Unesi 5 do 10 reči, odvojene zarezom, koje ukazuju na sadržaj ove strane.
+      meta_description_title: Opis
+      meta_description_help: Unesi opis sadržaja ove strane u dve do tri rečenice.

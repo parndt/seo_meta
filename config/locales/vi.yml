@@ -1,0 +1,10 @@
+vi:
+  seo_meta:
+    form:
+      seo: Tối ưu hóa công cụ tìm kiếm
+      seo_override_title: Tiêu đề trình duyệt
+      seo_override_title_help: Nhập 5-10 từ tóm tắt nội dung trang này.
+      meta_keywords_title: Meta keywords
+      meta_keywords_help: Nhập 5-10 từ khóa liên quan tới trang này, phân cách bằng dấu phẩy.
+      meta_description_title: Meta description
+      meta_description_help: Nhập vào 2-3 câu thật súc tích mô tả trang này nói về gì.

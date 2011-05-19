@@ -1,0 +1,10 @@
+fi:
+  seo_meta:
+    form:
+      seo: Hakukoneoptimointi
+      seo_override_title: Otsikko
+      seo_override_title_help: Kirjoita 5-10 sanan otsikko joka tiivistää tämän sivun sisällön.
+      meta_keywords_title: Avainsanat
+      meta_keywords_help: "Kirjoita 5-10 avainsanaa, jotka littyvät tähän sivuun. Erottele ne pilkulla."
+      meta_description_title: Kuvaus
+      meta_description_help: Kirjoita ytimekäs kahden tai kolmen lauseen kuvaus tästä sivusta.

@@ -1,4 +1,7 @@
 nb:
+  seo_meta:
+    form:
+      seo: Søkemotoroptimalisering (SEO)
       seo_override_title: Nettleser tittel
       seo_override_title_help: Skriv inn en tittel på 5-10 ord som oppsummerer innholdet på siden.
       meta_keywords_title: Meta stikkord

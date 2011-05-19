@@ -1,0 +1,10 @@
+lv:
+  seo_meta:
+    form:
+      seo: Optimizēšana Interneta Meklētājiem
+      seo_override_title: Nosaukums pārlūkā
+      seo_override_title_help: Ievadiet 5-10 nosaukuma vārdus, kuri apkopo šīs lapas saturu.
+      meta_keywords_title: Meta atslēgvārdi
+      meta_keywords_help: Ievadiet 5-10 atslēgvārdus, kuriem ir saistība ar šo lapu. Atslēgvārdus atdaliet ar komatu
+      meta_description_title: Meta apraksts
+      meta_description_help: Īsi, divos vai trijos teikumos, aprakstiet šīs lapas saturu.
