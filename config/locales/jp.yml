@@ -1,0 +1,10 @@
+jp:
+  seo_meta:
+    form:
+      seo: 検索エンジン最適化
+      seo_override_title: ブラウザのタイトル
+      seo_override_title_help: このページの内容を要約する短いタイトルを入れて下さい。
+      meta_keywords_title: メタキーワード
+      meta_keywords_help: このページに関係のあるキーワードを5つから10個ほど入れて下さい。区切りの記号はコンマです。
+      meta_description_title: メタの説明
+      meta_description_help: このページの内容を説明する簡潔な文章を二三入れて下さい。
