@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
 
-  s.add_dependency 'refinerycms-generators', '~> 1.0.1'
+  s.add_dependency 'refinerycms-generators', '~> 1.1.0'
 end
