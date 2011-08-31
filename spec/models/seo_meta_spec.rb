@@ -14,15 +14,15 @@ module SeoMeta
 
     context 'responds to' do
       it 'meta_keywords' do
-        dummy_for_spec.respond_to?(:meta_keywords)
+        dummy_for_spec.respond_to?(:meta_keywords).should be_true
       end
 
       it 'meta_description' do
-        dummy_for_spec.respond_to?(:meta_description)
+        dummy_for_spec.respond_to?(:meta_description).should be_true
       end
 
       it 'browser_title' do
-        dummy_for_spec.respond_to?(:browser_title)
+        dummy_for_spec.respond_to?(:browser_title).should be_true
       end
     end
 
