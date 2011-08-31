@@ -11,5 +11,8 @@ Gem::Specification.new do |s|
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
 
-  s.add_dependency 'refinerycms-generators', '~> 2.0'
+  s.add_development_dependency 'combustion'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'sqlite3'
+  s.add_dependency 'rails', '>= 3.0.0'
 end
