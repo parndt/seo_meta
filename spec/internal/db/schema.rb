@@ -1,6 +1,6 @@
 # Defined based on the migrations and the dummy spec model.
 
-::ActiveRecord::Schema.define(:version => 20110329222114) do
+::ActiveRecord::Schema.define do
 
   create_table 'seo_meta', :force => true do |t|
     t.integer 'seo_meta_id'

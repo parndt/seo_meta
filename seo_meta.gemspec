@@ -13,6 +13,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'combustion'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'sqlite3'
+  unless defined?(JRUBY_VERSION)
+    s.add_development_dependency 'sqlite3'
+  else
+    s.add_development_dependency 'activerecord-jdbcsqlite3-adapter'
+  end
   s.add_dependency 'rails', '>= 3.0.0'
 end
