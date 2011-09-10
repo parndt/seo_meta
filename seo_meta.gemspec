@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.authors           = ['Philip Arndt']
   s.homepage          = 'http://philiparndt.name'
   s.email             = 'parndt@gmail.com'
-  s.version           = '1.2.0.rc1'
+  s.version           = '1.2.0.rc2'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
-  s.date              = '2011-08-12'
+  s.date              = '2011-09-10'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
