@@ -33,6 +33,24 @@ module SeoMeta
       }
     end
 
+    def method_missing(method, *args, &block)
+      attrs = ::SeoMeta::attributes.keys
+      if attrs.include?(method) || attrs.map{|a| :"#{a}=" }.include?(method)
+        seo_meta.send(method, *args, &block)
+      else
+        super
+      end
+    end
+
+    def respond_to?(method)
+      attrs = ::SeoMeta::attributes.keys
+      if attrs.include?(method) || attrs.map{|a| :"#{a}=" }.include?(method)
+        true
+      else
+        super
+      end
+    end
+
   protected
     def find_seo_meta_tags
       @seo_meta ||= ::SeoMetum.where(:seo_meta_type => self.class.name,
