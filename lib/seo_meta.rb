@@ -16,7 +16,6 @@ module SeoMeta
 
   end
 
-  autoload :ClassMethods, File.expand_path('../seo_meta/class_methods', __FILE__)
   autoload :InstanceMethods, File.expand_path('../seo_meta/instance_methods', __FILE__)
 
 end
@@ -32,9 +31,8 @@ def is_seo_meta(options = {})
     ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
                     :class_name => self.name
 
-    # Include the instance methods and extend with the class methods.
+    # Include the instance methods.
     self.send :include, ::SeoMeta::InstanceMethods
-    extend ::SeoMeta::ClassMethods
 
     # Ensure that seo_meta is saved after the model is saved.
     after_save :save_meta_tags!
