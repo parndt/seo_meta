@@ -44,8 +44,5 @@ def is_seo_meta(options = {})
     fields << {:to => :seo_meta}
 
     delegate *fields
-  else
-    warn "[seo_meta] Table does not exist, please create #{::SeoMetum.table_name}."
-    warn "[seo_meta] See https://github.com/parndt/seo_meta#readme for instructions."
   end
 end
