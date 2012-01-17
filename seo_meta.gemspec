@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.authors           = ['Philip Arndt']
   s.homepage          = 'http://philiparndt.name'
   s.email             = 'parndt@gmail.com'
-  s.version           = '1.2.0.rc2'
+  s.version           = '1.2.0.rc3'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
-  s.date              = '2011-09-10'
+  s.date              = '2012-01-18'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   else
     s.add_development_dependency 'activerecord-jdbcsqlite3-adapter'
   end
-  s.add_dependency 'rails', '>= 3.0.0'
+  s.add_dependency 'railties', '>= 3.0.0'
 end
