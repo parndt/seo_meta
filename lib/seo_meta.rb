@@ -21,7 +21,7 @@ module SeoMeta
 end
 
 def is_seo_meta(options = {})
-  if ::SeoMetum.table_exists?
+  if included_modules.exclude?(::SeoMeta::InstanceMethods)
     # Let the base know about SeoMetum
     has_one :seo_meta, :class_name => 'SeoMetum',
             :foreign_key => :seo_meta_id, :dependent => :destroy,
@@ -36,13 +36,15 @@ def is_seo_meta(options = {})
 
     # Ensure that seo_meta is saved after the model is saved.
     after_save :save_meta_tags!
-
-    # Delegate both the accessor and setters for the fields to :seo_meta
-    fields = ::SeoMeta.attributes.keys.reject{|field|
-      self.column_names.map(&:to_sym).include?(field)
-    }.map{|a| [a, :"#{a}="]}.flatten
-    fields << {:to => :seo_meta}
-
-    delegate *fields
   end
+
+  # Delegate both the accessor and setters for the fields to :seo_meta
+  fields = ::SeoMeta.attributes.keys
+  fields = fields.reject{|field|
+    self.column_names.map(&:to_sym).include?(field)
+  } if self.table_exists?
+  fields = fields.map{|a| [a, :"#{a}="]}.flatten
+
+  fields << {:to => :seo_meta}
+  delegate *fields
 end
