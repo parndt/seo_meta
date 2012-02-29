@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.authors           = ['Philip Arndt']
   s.homepage          = 'http://philiparndt.name'
   s.email             = 'parndt@gmail.com'
-  s.version           = '1.2.0.rc3'
+  s.version           = '1.2.0'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
   s.date              = '2012-01-18'
   s.summary           = 'SEO Meta tags plugin'
