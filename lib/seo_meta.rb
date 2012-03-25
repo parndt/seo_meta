@@ -39,11 +39,7 @@ def is_seo_meta(options = {})
   end
 
   # Delegate both the accessor and setters for the fields to :seo_meta
-  fields = ::SeoMeta.attributes.keys
-  fields = fields.reject{|field|
-    self.column_names.map(&:to_sym).include?(field)
-  } if self.table_exists?
-  fields = fields.map{|a| [a, :"#{a}="]}.flatten
+  fields = ::SeoMeta.attributes.keys.map{|a| [a, :"#{a}="]}.flatten
 
   fields << {:to => :seo_meta}
   delegate *fields
