@@ -13,10 +13,6 @@ module SeoMeta
     let(:dummy_for_spec) { DummyForSpec.create }
 
     context 'responds to' do
-      it 'meta_keywords' do
-        dummy_for_spec.respond_to?(:meta_keywords).should be_true
-      end
-
       it 'meta_description' do
         dummy_for_spec.respond_to?(:meta_description).should be_true
       end
@@ -27,11 +23,6 @@ module SeoMeta
     end
 
     context 'allows us to assign to' do
-      it 'meta_keywords' do
-        dummy_for_spec.meta_keywords = 'Some, great, keywords'
-        dummy_for_spec.meta_keywords.should == 'Some, great, keywords'
-      end
-
       it 'meta_description' do
         dummy_for_spec.meta_description = 'This is my description of the dummy_for_spec for search results.'
         dummy_for_spec.meta_description.should == 'This is my description of the dummy_for_spec for search results.'
@@ -44,14 +35,6 @@ module SeoMeta
     end
 
     context 'allows us to update' do
-      it 'meta_keywords' do
-        dummy_for_spec.meta_keywords = 'Some, great, keywords'
-        dummy_for_spec.save
-
-        dummy_for_spec.reload
-        dummy_for_spec.meta_keywords.should == 'Some, great, keywords'
-      end
-
       it 'meta_description' do
         dummy_for_spec.meta_description = 'This is my description of the dummy_for_spec for search results.'
         dummy_for_spec.save

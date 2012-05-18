@@ -7,7 +7,6 @@
     t.string 'seo_meta_type'
 
     t.string 'browser_title'
-    t.string 'meta_keywords'
     t.text 'meta_description'
 
     t.timestamps
