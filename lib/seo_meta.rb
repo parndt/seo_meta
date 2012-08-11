@@ -6,7 +6,9 @@ module SeoMeta
     def attributes
       @@attributes ||= {
         :browser_title => :string,
-        :meta_description => :text
+        :meta_description => :text,
+        :noindex => :boolean,
+        :nofollow => :boolean
       }
     end
   end

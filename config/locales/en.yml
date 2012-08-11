@@ -6,3 +6,7 @@ en:
       seo_override_title_help: Enter a 5-10 word title that summarizes the contents of this post.
       meta_description_title: Meta description
       meta_description_help: Enter a concise two or three sentences describing what this post is about.
+      noindex: Noindex
+      noindex_help: Tell search engines not to index this page
+      nofollow: Nofollow
+      nofollow_help: Tell search engines not to scan the page for links to follow
