@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.email             = 'parndt@gmail.com'
   s.version           = '1.4.0'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
-  s.date              = '2012-03-26'
+  s.date              = '2012-11-28'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
