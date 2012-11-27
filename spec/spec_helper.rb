@@ -5,7 +5,7 @@ def setup_environment
   # Configure Rails Environment
   ENV["RAILS_ENV"] ||= 'test'
 
-  Bundler.require(:default, :development)
+  Bundler.require :default, :development
 
   Combustion.initialize! :active_record
 

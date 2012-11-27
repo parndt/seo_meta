@@ -1,4 +1,3 @@
 test:
-  adapter: <%= "jdbc" if defined? JRUBY_VERSION %>sqlite3
-  database: db/test.sqlite3
-  timeout: 5000
+  adapter:  <%= "jdbc" if defined? JRUBY_VERSION %>sqlite3
+  database: db/combustion_test.sqlite

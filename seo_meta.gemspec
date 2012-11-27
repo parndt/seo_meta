@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
   s.files             = Dir['lib/**/*', 'db/**/*', 'app/**/*', 'config/**/*', '*.md']
+  s.license           = %q{MIT}
 
   s.add_development_dependency 'combustion'
   s.add_development_dependency 'rspec-rails'

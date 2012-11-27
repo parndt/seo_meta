@@ -13,7 +13,7 @@ class CreateSeoMeta < ActiveRecord::Migration
     end
 
     add_index :seo_meta, :id
-    add_index :seo_meta, [:seo_meta_id, :seo_meta_type]
+    add_index :seo_meta, [:seo_meta_id, :seo_meta_type], :name => :id_type_index_on_seo_meta
   end
 
   def self.down

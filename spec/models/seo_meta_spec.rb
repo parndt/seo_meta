@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module SeoMeta
   class DummyForSpec < ActiveRecord::Base
-    set_table_name 'seo_meta_dummy_for_specs'
+    self.table_name = 'seo_meta_dummy_for_specs'
 
     is_seo_meta
   end
