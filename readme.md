@@ -1,5 +1,7 @@
 # SEO Meta tags plugin
 
+[![Build Status](https://travis-ci.org/parndt/seo_meta.png)](https://travis-ci.org/parndt/seo_meta)
+
 ## Installation
 
 Add to your project using your Bundler Gemfile:
