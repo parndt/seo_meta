@@ -6,3 +6,7 @@ de:
       seo_override_title_help: Geben Sie einen 5-10 Wörter langen Titel an, den der Inhalt der Seite beschreibt.
       meta_description_title: Meta-Beschreibung
       meta_description_help: Beschreiben Sie in knappen zwei oder drei Sätzen, um was es sich bei dieser Seite handelt.
+      noindex: Noindex
+      noindex_help: Suchmaschine anweisen die Seite nicht zu indexieren
+      nofollow: Nofollow
+      nofollow_help: Suchmaschine anweisen die Seite nicht nach Links zu scannen

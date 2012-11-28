@@ -13,3 +13,19 @@
   </span>
   <%= form.text_area :meta_description, :class => 'widest', :rows => 7 %>
 </div>
+<div class='field'>
+  <span class='label_with_help'>
+   <%= form.label :noindex, t('noindex', :scope => 'seo_meta.form') %>
+  </span>
+  <%= form.check_box :noindex %>
+  <%= form.label :noindex, t('.noindex_help'),
+              :class => "stripped" %>
+</div>
+<div class='field'>
+  <span class='label_with_help'>
+   <%= form.label :nofollow?, t('nofollow', :scope => 'seo_meta.form') %>
+  </span>
+  <%= form.check_box :nofollow %>
+  <%= form.label :nofollow, t('.nofollow_help'),
+              :class => "stripped" %>
+</div>
