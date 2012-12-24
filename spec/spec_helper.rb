@@ -10,6 +10,7 @@ def setup_environment
   Combustion.initialize! :active_record
 
   require 'rspec/rails'
+  require 'capybara/rspec'
 
   Rails.backtrace_cleaner.remove_silencers!
 
