@@ -8,8 +8,8 @@ module SeoMeta
           before_filter :set_seo
 
           def set_seo
-            @seo = SeoMetum.find_by_sanitized_path(request.path)
-            @seo ||= SeoMetum.new :path => request.path
+            @seo = SeoMetum.find_by_sanitized_path(request.fullpath)
+            @seo ||= SeoMetum.new :path => request.fullpath
           end
         end
       end
