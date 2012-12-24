@@ -25,7 +25,7 @@ class SeoMetum < ActiveRecord::Base
       # And then get those ignored and remove them
       not_ignored_params = params.reject{|p| ignored_path_params.detect{|ignored| p.start_with?("#{ignored}=") || (p == ignored)}}
 
-      not_ignored_params.blank? ? path : "#{path}?#{not_ignored_params.join('&')}"
+      not_ignored_params.blank? ? path : "#{path}?#{not_ignored_params.sort.join('&')}"
 
     end
 
