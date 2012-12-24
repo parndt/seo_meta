@@ -52,5 +52,18 @@ module SeoMeta
       end
     end
 
+    context "SeoMetum for URL" do
+
+      let(:seo_browser_title) { "[SEO META] Testing URL" }
+      let(:seo_url) { "/en/test-for-seo" }
+      let(:seo_for_spec) { SeoMetum.create! :url => seo_url, :browser_title => seo_browser_title }
+
+      subject { seo_for_spec }
+
+      its(:browser_title) { should == seo_browser_title}
+      its(:url) { should == seo_url}
+
+    end
+
   end
 end
