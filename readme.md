@@ -114,6 +114,63 @@ from a `form_for` block, for example:
 <% end %>
 ```
 
+## SEO for URLs
+
+It could be necessary to add some SEO information for custom URLs (URLs that doesn't exactly match with a model) so now we could create a SeoMeta object attached to an URL.
+
+SeoMetum class has an url attribute that can be matched against in order to find the proper SEO information for a custom URL.
+
+SeoMetum class has also an array of ignored params that can be used to avoid not showing SEO information in pages pointed by mailings or Adwords. To add more ignored params just override the array
+
+```ruby
+SeoMetum.ignored_path_params = ["a"]
+```
+
+## SEO in controllers
+
+We can include a filter in controllers that set the SEO information for current path.
+
+In order to do it you just have to include the retrieve method in the controllers. You can do it in the ApplicationController so every controller in your application gets it.
+
+```ruby
+class ApplicationController < ActionController::Base
+
+  must_retrieve_seo_info
+
+end
+
+```
+
+You can override this behaviour in your controllers:
+
+```ruby
+class NewsController < ActionController::Base
+
+  def set_seo
+    if params[:id].blank?
+      super
+    else
+      @seo = News.find(params[:id])
+    end
+  end
+
+end
+
+```
+
+This way you will always have a @seo variable in your views and you just have to put the SEO information.
+
+
+```erb
+<html>
+  <head>
+    <title><%= @seo.browser_title %></title>
+  </head>
+....
+</html>
+<% end %>
+```
+
 ## Anything else?
 
 Nope, all done!
