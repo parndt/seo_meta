@@ -54,14 +54,31 @@ module SeoMeta
 
     context "SeoMetum for URL" do
 
+      before :each do
+        seo_for_spec
+      end
+
       let(:seo_browser_title) { "[SEO META] Testing URL" }
-      let(:seo_url) { "/en/test-for-seo" }
-      let(:seo_for_spec) { SeoMetum.create! :url => seo_url, :browser_title => seo_browser_title }
+      let(:seo_for_spec) { SeoMetum.create! :url => "/en/test-for-seo", :browser_title => seo_browser_title }
 
       subject { seo_for_spec }
 
       its(:browser_title) { should == seo_browser_title}
-      its(:url) { should == seo_url}
+
+      context "when searched by the url" do
+
+        let(:found_seo) { SeoMetum.find_by_url "/en/test-for-seo"}
+
+        subject { found_seo }
+
+        it "should find the SEO information" do
+          seo_for_spec  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+
+      end
 
     end
 
