@@ -134,9 +134,7 @@ In order to do it you just have to include the retrieve method in the controller
 
 ```ruby
 class ApplicationController < ActionController::Base
-
   must_retrieve_seo_info
-
 end
 
 ```
@@ -168,7 +166,6 @@ This way you will always have a @seo variable in your views and you just have to
   </head>
 ....
 </html>
-<% end %>
 ```
 
 ## Anything else?
