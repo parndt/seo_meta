@@ -97,6 +97,26 @@ module SeoMeta
 
       end
 
+      context "when created for a path with params" do
+
+        before :each do
+          seo_with_params
+        end
+
+        let(:seo_with_params) { SeoMetum.create! :path => "/en/test-for-seo?page=2", :browser_title => seo_browser_title }
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo?page=2&a=1", ["a"]}
+
+        subject { found_seo }
+
+        it "should be found" do
+          seo_with_params.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
     end
 
   end
