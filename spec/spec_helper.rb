@@ -7,6 +7,8 @@ def setup_environment
 
   Bundler.require :default, :development
 
+  require 'capybara_helpers'
+
   Combustion.initialize! :active_record, :action_controller
 
   require 'rspec/rails'
