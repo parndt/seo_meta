@@ -5,11 +5,11 @@ def setup_environment
   # Configure Rails Environment
   ENV["RAILS_ENV"] ||= 'test'
 
-  Bundler.require :default, :development
+  Bundler.require :default, :test
 
   Combustion.initialize! :active_record
 
-  require 'rspec/rails'
+  require 'rspec'
 
   Rails.backtrace_cleaner.remove_silencers!
 
@@ -19,8 +19,6 @@ def setup_environment
 
   RSpec.configure do |config|
     config.mock_with :rspec
-
-    config.use_transactional_fixtures = true
   end
 end
 
