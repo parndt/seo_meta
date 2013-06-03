@@ -7,9 +7,12 @@ def setup_environment
 
   Bundler.require :default, :development
 
-  Combustion.initialize! :active_record
+  require 'capybara_helpers'
+
+  Combustion.initialize! :active_record, :action_controller
 
   require 'rspec/rails'
+  require 'capybara/rspec'
 
   Rails.backtrace_cleaner.remove_silencers!
 

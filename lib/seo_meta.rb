@@ -16,6 +16,7 @@ module SeoMeta
   end
 
   autoload :InstanceMethods, File.expand_path('../seo_meta/instance_methods', __FILE__)
+  autoload :InstanceControllerMethods, File.expand_path('../seo_meta/instance_controller_methods', __FILE__)
 
 end
 
@@ -42,4 +43,11 @@ def is_seo_meta(options = {})
 
   fields << {:to => :seo_meta}
   delegate *fields
+end
+
+def must_retrieve_seo_info
+  if included_modules.exclude?(::SeoMeta::InstanceControllerMethods)
+       # Include the instance methods.
+    self.send :include, ::SeoMeta::InstanceControllerMethods
+  end
 end

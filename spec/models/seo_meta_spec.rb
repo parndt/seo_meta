@@ -52,5 +52,123 @@ module SeoMeta
       end
     end
 
+    context "SeoMetum for path" do
+
+      let(:seo_browser_title) { "[SEO META] Testing URL" }
+      let(:seo_for_spec) { SeoMetum.create! :path => "/en/test-for-seo", :browser_title => seo_browser_title }
+
+      subject { seo_for_spec }
+
+      its(:browser_title) { should == seo_browser_title}
+
+      context "when searched by the path" do
+
+        before :each do
+          seo_for_spec
+        end
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo"}
+
+        subject { found_seo }
+
+        it "should find the SEO information" do
+          seo_for_spec.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
+      context "when searched by the path with extra fields" do
+
+        before :each do
+          seo_for_spec
+        end
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo?a=1", ["a"]}
+
+        subject { found_seo }
+
+        it "should find the SEO information" do
+          seo_for_spec.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
+      context "when created for a path with params" do
+
+        before :each do
+          seo_with_params
+        end
+
+        let(:seo_with_params) { SeoMetum.create! :path => "/en/test-for-seo?page=2", :browser_title => seo_browser_title }
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo?page=2&a=1", ["a"]}
+
+        subject { found_seo }
+
+        it "should be found" do
+          seo_with_params.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
+
+      context "when created for a path with undesired params" do
+
+        before :each do
+          SeoMetum.ignored_path_params = ["a"]
+          seo_with_params
+        end
+
+        let(:seo_with_params) { SeoMetum.create! :path => "/en/test-for-seo?page=2&a=1", :browser_title => seo_browser_title }
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo?page=2&a=1"}
+
+        subject { found_seo }
+
+        it "should clean the path" do
+          seo_with_params.path.should == "/en/test-for-seo?page=2"
+        end
+
+        it "should be found" do
+          seo_with_params.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
+      context "when created for a path with a lot of params" do
+
+        before :each do
+          SeoMetum.ignored_path_params = ["a"]
+          seo_with_params
+        end
+
+        let(:seo_with_params) { SeoMetum.create! :path => "/en/test-for-seo?q=search&page=2&a=1", :browser_title => seo_browser_title }
+
+        let(:found_seo) { SeoMetum.find_by_sanitized_path "/en/test-for-seo?q=search&page=2&a=1"}
+
+        subject { found_seo }
+
+        it "should clean and sort the path" do
+          seo_with_params.path.should == "/en/test-for-seo?page=2&q=search"
+        end
+
+        it "should be found" do
+          seo_with_params.should  == found_seo
+        end
+
+        its(:browser_title) { should == seo_browser_title}
+
+      end
+
+    end
+
   end
 end
