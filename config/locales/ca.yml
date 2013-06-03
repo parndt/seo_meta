@@ -1,0 +1,8 @@
+ca:
+  seo_meta:
+    form:
+      seo: Optimització per a Cercadors (SEO)
+      seo_override_title: Títol del navegador
+      seo_override_title_help: Escriu un títol de 5 a 10 paraules que resumeixi el contingut d'aquesta publicació.
+      meta_description_title: Meta descripció
+      meta_description_help: Escriu dues o tres frases concises que descriguin de què tracta aquesta publicació.
