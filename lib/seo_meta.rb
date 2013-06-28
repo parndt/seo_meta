@@ -12,7 +12,7 @@ module SeoMeta
   end
 
   class Engine < ::Rails::Engine
-
+    engine_name 'seo_meta'
   end
 
   autoload :InstanceMethods, File.expand_path('../seo_meta/instance_methods', __FILE__)
