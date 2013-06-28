@@ -22,9 +22,9 @@ end
 def is_seo_meta(options = {})
   if included_modules.exclude?(::SeoMeta::InstanceMethods)
     # Let the base know about SeoMetum
-    has_one :seo_meta, :class_name => 'SeoMetum',
-            :foreign_key => :seo_meta_id, :dependent => :destroy,
-            :conditions => {:seo_meta_type => self.name}
+    has_one :seo_meta, -> { where(:seo_meta_type => self.name) },
+            :class_name => 'SeoMetum', :foreign_key => :seo_meta_id,
+            :dependent => :destroy
 
     # Let SeoMetum know about the base
     ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
