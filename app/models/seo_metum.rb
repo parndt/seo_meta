@@ -1,3 +1,5 @@
 class SeoMetum < ActiveRecord::Base
-  attr_accessible :seo_meta_type, :browser_title, :meta_description
+  if ActiveRecord.constants.include?(:MassAssignmentSecurity)
+    attr_accessible :seo_meta_type, :browser_title, :meta_description
+  end
 end
