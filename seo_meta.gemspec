@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license           = %q{MIT}
 
   s.add_development_dependency 'combustion'
-  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rspec'
   unless defined?(JRUBY_VERSION)
     s.add_development_dependency 'sqlite3'
   else

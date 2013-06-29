@@ -14,11 +14,11 @@ module SeoMeta
 
     context 'responds to' do
       it 'meta_description' do
-        dummy_for_spec.respond_to?(:meta_description).should be_true
+        dummy_for_spec.should respond_to(:meta_description)
       end
 
       it 'browser_title' do
-        dummy_for_spec.respond_to?(:browser_title).should be_true
+        dummy_for_spec.should respond_to(:browser_title)
       end
     end
 
