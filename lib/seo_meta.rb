@@ -28,7 +28,7 @@ def is_seo_meta(options = {})
     }.merge(options.slice(:class_name, :foreign_key, :dependent))
 
     if ActiveRecord::VERSION::STRING >= '4.0.0'
-      has_one :seo_meta, -> { where(:seo_meta_type => self.name) }, has_one_options
+      has_one :seo_meta, proc { where(:seo_meta_type => self.name) }, has_one_options
     else
       has_one :seo_meta, {:conditions => {:seo_meta_type => self.name}}.merge(has_one_options)
     end
