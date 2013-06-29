@@ -5,9 +5,10 @@ gemfile:
   - gemfiles/Gemfile.rails-4.0.rb
 script: bundle exec rspec spec
 rvm:
+  - 2.0.0
+  - 1.9.3
   - 1.8.7
   - ree
-  - 1.9.3
   - rbx-19mode
   - jruby-19mode
 matrix:
