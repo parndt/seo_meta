@@ -7,12 +7,12 @@ script: bundle exec rspec spec
 rvm:
   - 1.8.7
   - ree
-  - 1.9.2
   - 1.9.3
   - rbx-19mode
   - jruby-19mode
-exclude:
-  - rvm: 1.8.7
-    gemfile: gemfiles/Gemfile.rails-4.0.rb
-  - rvm: ree
-    gemfile: gemfiles/Gemfile.rails-4.0.rb
+matrix:
+  exclude:
+    - rvm: 1.8.7
+      gemfile: gemfiles/Gemfile.rails-4.0.rb
+    - rvm: ree
+      gemfile: gemfiles/Gemfile.rails-4.0.rb
