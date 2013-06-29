@@ -5,11 +5,11 @@ def setup_environment
   # Configure Rails Environment
   ENV["RAILS_ENV"] ||= 'test'
 
-  Bundler.require :default, :development
+  Bundler.require :default, :test
 
   Combustion.initialize! :active_record
 
-  require 'rspec/rails'
+  require 'rspec'
 
   Rails.backtrace_cleaner.remove_silencers!
 
@@ -19,8 +19,6 @@ def setup_environment
 
   RSpec.configure do |config|
     config.mock_with :rspec
-
-    config.use_transactional_fixtures = true
   end
 end
 
@@ -43,16 +41,4 @@ unless (begin; require 'spork'; rescue LoadError; nil end).nil?
 else
   setup_environment
   each_run
-end
-
-def capture_stdout(stdin_str = '')
-  begin
-    require 'stringio'
-    $o_stdin, $o_stdout, $o_stderr = $stdin, $stdout, $stderr
-    $stdin, $stdout, $stderr = StringIO.new(stdin_str), StringIO.new, StringIO.new
-    yield
-    {:stdout => $stdout.string, :stderr => $stderr.string}
-  ensure
-    $stdin, $stdout, $stderr = $o_stdin, $o_stdout, $o_stderr
-  end
 end
