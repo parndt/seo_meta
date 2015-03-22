@@ -9,7 +9,7 @@ class CreateSeoMeta < ActiveRecord::Migration
       t.string :meta_keywords
       t.text :meta_description
 
-      t.timestamps
+      t.timestamps :null => false
     end
 
     add_index :seo_meta, :id
