@@ -6,10 +6,18 @@ require 'bundler/setup'
 task :default => :spec
 
 task :spec do
-  %w(3.0 3.1 3.2 4.0).each do |rails_version|
-    bundle_gemfile = "BUNDLE_GEMFILE='gemfiles/Gemfile.rails-#{rails_version}.rb'"
-    puts "\n" + (cmd = "#{bundle_gemfile} bundle exec rspec spec")
-    system cmd
+  %w(3.0 3.1 3.2 4.0 4.2 5.0).each do |rails_version|
+    [
+      'bundle update',
+      'bundle exec rspec spec'
+    ].each do |task|
+      command = [
+        "BUNDLE_GEMFILE='gemfiles/Gemfile.rails-#{rails_version}.rb'",
+        task
+      ].join(' ')
+      puts "\n" + command
+      system command
+    end
   end
   puts "\n"
 end
