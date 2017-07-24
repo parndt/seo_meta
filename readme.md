@@ -36,7 +36,7 @@ logic to migrate across your existing data and remove the columns from your mode
 afterward, for example with `Page`:
 
 ```ruby
-class CreateSeoMeta < ActiveRecord::Migration
+class CreateSeoMeta < ActiveRecord::Migration[4.2]
 
   def self.up
     # ... migration logic from the seo_meta generator ...
