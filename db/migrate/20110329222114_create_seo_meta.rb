@@ -1,5 +1,10 @@
-class CreateSeoMeta < ActiveRecord::Migration
+if Gem.loaded_specs["activerecord"].version >= Gem::Version.new('5.0')
+  class CreateSeoMeta < ActiveRecord::Migration[4.2]; end
+else
+  class CreateSeoMeta < ActiveRecord::Migration; end
+end
 
+CreateSeoMeta.class_eval do
   def self.up
     create_table :seo_meta do |t|
       t.integer :seo_meta_id
