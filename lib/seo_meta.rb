@@ -34,8 +34,13 @@ def is_seo_meta(options = {})
     end
 
     # Let SeoMetum know about the base
-    ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
-                    :class_name => self.name
+    if ActiveRecord::VERSION::STRING >= '5.0.0'
+      ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
+                      class_name: self.name, optional: true
+    else
+      ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
+                      class_name: self.name
+    end
 
     # Include the instance methods.
     self.send :include, ::SeoMeta::InstanceMethods
