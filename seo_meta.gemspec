@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.authors           = ['Philip Arndt']
   s.homepage          = 'http://p.arndt.io'
   s.email             = 'p@arndt.io'
-  s.version           = '2.0.1'
+  s.version           = '3.0.0'
   s.description       = 'SEO Meta tags plugin for Ruby on Rails'
   s.summary           = 'SEO Meta tags plugin'
   s.require_paths     = %w(lib)
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   else
     s.add_development_dependency 'activerecord-jdbcsqlite3-adapter'
   end
-  s.add_dependency 'railties', '>= 3.0.0'
+  s.add_dependency 'railties', '>= 5.0.0'
 end
