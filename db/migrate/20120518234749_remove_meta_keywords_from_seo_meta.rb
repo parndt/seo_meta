@@ -1,10 +1,4 @@
-if Gem.loaded_specs["activerecord"].version >= Gem::Version.new('5.0')
-  class RemoveMetaKeywordsFromSeoMeta < ActiveRecord::Migration[4.2]; end
-else
-  class RemoveMetaKeywordsFromSeoMeta < ActiveRecord::Migration; end
-end
-
-RemoveMetaKeywordsFromSeoMeta.class_eval do
+class RemoveMetaKeywordsFromSeoMeta < ActiveRecord::Migration[4.2]
   def up
     remove_column :seo_meta, :meta_keywords
   end

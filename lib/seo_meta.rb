@@ -12,7 +12,7 @@ module SeoMeta
   end
 
   class Engine < ::Rails::Engine
-    engine_name 'seo_meta' if Rails.version.to_s >= '3.1.0'
+    engine_name 'seo_meta'
   end
 
   autoload :InstanceMethods, File.expand_path('../seo_meta/instance_methods', __FILE__)
@@ -27,15 +27,11 @@ def is_seo_meta(options = {})
       :dependent => :destroy
     }.merge(options.slice(:class_name, :foreign_key, :dependent))
 
-    if ActiveRecord::VERSION::STRING >= '4.0.0'
-      has_one :seo_meta, proc { where(:seo_meta_type => self.name) }, has_one_options
-    else
-      has_one :seo_meta, {:conditions => {:seo_meta_type => self.name}}.merge(has_one_options)
-    end
+    has_one :seo_meta, proc { where(:seo_meta_type => self.name) }, has_one_options
 
     # Let SeoMetum know about the base
     ::SeoMetum.send :belongs_to, self.name.underscore.gsub('/', '_').to_sym,
-                    :class_name => self.name
+                    class_name: self.name, optional: true
 
     # Include the instance methods.
     self.send :include, ::SeoMeta::InstanceMethods
