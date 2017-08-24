@@ -1,15 +1,9 @@
-<h2><%= t('seo', :scope => 'seo_meta.form') %></h2>
-<div class='field'>
-  <span class='label_with_help'>
-   <%= form.label :browser_title, t('seo_override_title', :scope => 'seo_meta.form') %>
-   <%= refinery_help_tag t('seo_override_title_help', :scope => 'seo_meta.form')%>
-  </span>
-  <%= form.text_field :browser_title, :class => 'widest' %>
+<h2><%= t('seo', scope: 'seo_meta.form') %></h2>
+<div class="field">
+  <%= form.label :browser_title, t('seo_override_title', scope: 'seo_meta.form') %>
+  <%= form.text_field :browser_title, class: 'widest', placeholder: t('seo_override_title_help', scope: 'seo_meta.form') %>
 </div>
-<div class='field'>
-  <span class='label_with_help'>
-   <%= form.label :meta_description, t('meta_description_title', :scope => 'seo_meta.form') %>
-   <%= refinery_help_tag t('meta_description_help', :scope => 'seo_meta.form') %>
-  </span>
-  <%= form.text_area :meta_description, :class => 'widest', :rows => 7 %>
+<div class="field">
+  <%= form.label :meta_description, t('meta_description_title', scope: 'seo_meta.form') %>
+  <%= form.text_area :meta_description, class: 'widest', rows: 7, placeholder: t('meta_description_help', scope: 'seo_meta.form') %>
 </div>
