@@ -15,7 +15,7 @@ for example with `Page`:
 
 ```ruby
 class Page < ActiveRecord::Base
- is_seo_meta
+  is_seo_meta
 end
 ```
 
@@ -110,7 +110,7 @@ from a `form_for` block, for example:
 
 ```erb
 <%= form_for @page do |f| -%>
- <%= render '/seo_meta/form', :form => f %>
+  <%= render '/seo_meta/form', :form => f %>
 <% end %>
 ```
 
