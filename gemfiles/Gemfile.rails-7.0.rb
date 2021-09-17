@@ -1,5 +1,3 @@
-RAILS_VERSION = '~> 5.0.0'
+RAILS_VERSION = '~> 7.0.0.alpha'
 
 eval File.read(File.expand_path('../../Gemfile', __FILE__))
-
-gem 'sqlite3', '~> 1.3.6'

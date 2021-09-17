@@ -8,5 +8,3 @@ group :test do
   gem 'railties', RAILS_VERSION
   gem 'activerecord', RAILS_VERSION
 end
-
-gem 'pry'
