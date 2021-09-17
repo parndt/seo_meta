@@ -1,8 +1,0 @@
-cache: bundler
-sudo: false
-gemfile:
-  - gemfiles/Gemfile.rails-5.0.rb
-  - gemfiles/Gemfile.rails-5.1.rb
-script: bundle exec rspec spec
-rvm:
-  - 2.4.1

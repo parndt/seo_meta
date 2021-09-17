@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        rails: [ "7.0", "6.1", "5.1", "5.0" ]
+        ruby: [ "3.0", "2.7" ]
+      fail-fast: false
+      max-parallel: 20
+    runs-on: ubuntu-latest
+
+    name: gemfiles/Gemfile.rails-${{ matrix.rails }}.rb with ruby ${{ matrix.ruby }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: ${{ matrix.ruby }}
+
+      - run: bundle exec rspec spec
