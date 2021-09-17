@@ -16,7 +16,7 @@ jobs:
       max-parallel: 2
     runs-on: ubuntu-latest
 
-    name: gemfiles/Gemfile.rails-${{ matrix.rails }}.rb ${{ matrix.ruby }}
+    name: gemfiles/Gemfile.rails-${{ matrix.rails }}.rb with ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
